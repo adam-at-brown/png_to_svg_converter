@@ -1,11 +1,13 @@
 const potrace = require('potrace')
 const fs = require('fs');
 const path = require('path')
-const dir_path = path.dirname(process.cwd())
 const chalk = require('chalk')
 
+const dir_path = path.dirname(process.cwd())
 const [directory] = process.argv.slice(2);
+
 if (!directory) console.error('\n%s You must include the folder name you wish to convert the contents of.\n', chalk.red.bold('ERROR'))
+
 const directory_name = `${dir_path}/${directory}`
 const filenames = fs.readdirSync(directory_name)
 
